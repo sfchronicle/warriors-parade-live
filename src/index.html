@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <title>Recent mass killings in San Francisco</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="__sync_contentCategory" content="meterA">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <%= !json.project.embedded ? t.include("partials/_paywall.html") : t.include("partials/_embedframe.html") %>
+    <%= t.include("partials/_analytics.html") %>
+
+    <%= t.include("partials/_head.html") %>
+
+  </head>
+
+  <%= !json.project.embedded ? "<body>" : "<body is='responsive-body'>" %>
+
+    <%= t.include("partials/_nav.html") %>
+
+
+    <% var data = json.warriors_parade_live %>
+    <div class="container">
+
+      <div class="timeline-header">
+        <h1><%= data.Headline %></h1>
+        <div class="date"><%= data.Date %></div>
+      </div>
+
+    <% json.warriors_parade_live['timeline'].forEach(function(t) { %>
+      <div class="event">
+        <h2><%= t.Time  %></h2>
+        <div class="deck"><%= t.Deck  %></div>
+        <div class="btn"><a href="<%= t.Link %>"><span class="readmore">Read more</span></a></div>
+
+        <% if (t.image) { %>
+          <div class="image">
+            <img src="http://ww3.hdnux.com/photos/61/73/47/<%= t.image[0].Wcm_id %>/7/1200x0.jpg">
+            <div class="caption"><%= t.image[0].Caption %> <span class="byline"> <%= t.image[0].Photographer %> </span></div>
+            </div>
+        <% } %>
+
+        <% if (t.ktvu_live) { %>
+          <iframe scrolling="no" frameborder="0" allowfullscreen webkitallowfullscreen mozallowfullscreen src="http://up.anv.bz/latest/anvload.html?key=eyJtIjoiRVBGT1giLCJwIjoiZGVmYXVsdCIsInYiOiJjMTAwMDE0IiwiYW52YWNrIjoiYW52YXRvX2VwZm94X2FwcF93ZWJfcHJvZF9iMzM3MzE2OGUxMmY0MjNmNDE1MDRmMjA3MDAwMTg4ZGFmODgyNTFiIiwicGx1Z2lucyI6eyJyZWFsVGltZUFuYWx5dGljcyI6dHJ1ZX19"  width ="640" height="360"></iframe>
+        <% } %>
+        
+      </div>
+    <% }); %>
+
+    </div>
+   
+
+    <%= t.include("partials/_footer.html") %>
+
+    <script src="app.js" async></script>
+    <%= t.include("partials/_helloSFC.html") %>
+
+  </body>
+</html>
