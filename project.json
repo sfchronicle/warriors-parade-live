@@ -1,17 +1,15 @@
 {
-  "year":"2017",
-  "title": "",
   "description": "",
   "seo_title": "",
+  "twitter_text":"",
+
+  "title": "Warriors Parade Live",
+  "year":"2017",
   "author":"lucio villa",
   "hearst_category":"metro",
   "date":"2017-06-15",
   "url": "http://projects.sfchronicle.com/2017/",
   "slug": "warriors-parade-live/",
-  "twitter_text":"",
-  "hashtag":"",
-  "image": "assets/social.jpg",
-  "sheets": [],
   "docsID":["1vonGHRaMP04QaSG7urK5HQL1CYDCRamT4AwJLHdTRh8"],
   "production": false,
   "embedded": false
